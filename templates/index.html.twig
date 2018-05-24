@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="row t-container">
+
+                <!-- Logo -->
+                <div class="span3">
+                    <div class="logo">
+                        <a href="{{ path('app_front_index') }}"><img src="img/logo-header.png" alt="Logo site web"></a>
+                        <span class="text-muted">Trouvez la formation qui vous correspond !</span>
+                    </div>
+                </div>
+
+                <div class="span9">
+                    <div class="row space60"></div>
+                    <nav id="nav" role="navigation">
+                        <a href="#nav" title="Show navigation">Show navigation</a>
+                        <a href="#" title="Hide navigation">Hide navigation</a>
+                        <ul class="clearfix">
+                            <li class="active"><a href="{{ path('app_front_index') }}" title="">ACCUEIL</a></li>
+                            <li><a href="{{ path('app_front_etapeasuivre') }}" title="">ÉTAPE A SUIVRE</a></li>
+                            <li><a href="gallery.htm" title="">LES FORMATIONS</a></li>
+                            <li><a href="services.htm" title="">MES DOCUMENTS</a></li>
+                            <li><a href="components.htm" title="">Features</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row space40"></div>
+            <div class="slider1 flexslider">  <!-- Slider -->
+                <ul class="slides">
+                    <li>
+                        <a href="{{ path('app_front_index') }}"><img src="img/convention-1410870_1920.jpg" height="500" width="300" alt="Slider home"></a>
+                    </li>
+                </ul>
+            </div>  <!-- Slider End -->
+        </div>
+    </header>
+
+    <!-- Header End -->
+    <!-- Content -->
+    <div id="content">
+        <div class="container">
+            <div class="f-center">
+                <h1>Bienvenue sur moncpf.info</h1>
+                <div class="head-info">
+                    Utiliser votre compte cpf pour vous former gratuitement a l'une de nos formations disponible !
+                </div>
+            </div>
+            <div class="f-hr"></div>
+            <div class="row space40"></div>
+            <div class="row">
+                <div class="span12">
+                    <div class="row">
+                        <!-- Service Container -->
+                        <div class="span4">
+                            <!-- Service Icon -->
+                            <div class="ic-1"><i class="icon-lightbulb"></i></div>
+                            <!-- Service Title -->
+                            <div class="title-1"><h4>Qu’est-ce qu’une formation professionnelle ? </h4></div>
+                            <!-- Service Content -->
+                            <div class="text-1">
+                                Dans un monde qui ne cesse de changer et d’évoluer, la formation professionnelle est un levier d’accès, de maintien et de retour à l’emploi. Ces dernières années, le taux d’accès des salariés à la formation a considérablement augmenté. Les précédentes réformes ont notamment permis d’adapter l’offre de formation réservée aux adultes aux différentes évolutions technologiques, économiques et sociales.
+                            </div>
+                        </div>
+                        <!-- Service Container End -->
+                        <div class="span4">
+                            <div class="ic-1"><i class="icon-resize-small"></i></div>
+                            <div class="title-1"><h4>Fully responsive</h4></div>
+                            <div class="text-1">
+                                Iil utilise un dictionnaire de plus de 200 mots kan rlarem as Ipsumtiotins, en combiake apple pie. Gingerbread icing ice cream applicake wafenaison.
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="ic-1"><i class="icon-eye-open"></i></div>
+                            <div class="title-1"><h4>Retina Ready</h4></div>
+                            <div class="text-1">
+                                Contrairement à une opinion répandue, Lorem as Ipsumtionnaire de plus n'est pas simplake apple pie. Gingerbread cotton  ice cream applicake wafeement.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="span4">
+                    <div class="ic-1"></div>
+                    <div class="title-1"><h4>Our Service:</h4></div>
+                    <!-- List -->
+                    <div class="text-1">
+                        <ul class="list-b">
+                            <!-- List Items -->
+                            <li><i class="icon-ok"></i> Tax Consulting.</li>
+                            <li><i class="icon-ok"></i> Business Consulting.</li>
+                            <li><i class="icon-ok"></i> Data analysis methods.</li>
+                            <li><i class="icon-ok"></i> On demand consulting.</li>
+                            <li><i class="icon-ok"></i> Private consultant.</li>
+                        </ul>
+                    </div>
+                    <!-- List End -->
+                </div>
+
+            </div>
+
+            <div class="space40"></div>
+
+            <!-- Our Clients -->
+            <div class="row">
+                <div class="span12">
+                    <h3>Nos partenaires</h3>
+                </div>
+            </div>
+
+            <div id="our-clients" class="slider2 flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="row">
+                            <div class="span2">
+                                <a href="" rel="external">
+                                    <img src="{{ asset('img/partenaire/isoo-300x120.png') }}" width="150" height="100" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="" rel="external">
+                                    <img src="{{ asset('img/partenaire/p1-1-300x73.png') }}" width="150" height="100" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="{{ asset('img/partenaire/datadock-1-300x87.jpg') }}" width="150" height="100" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="{{ asset('img/partenaire/cambridge-300x79.jpg') }}" width="150" height="100" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="{{ asset('img/partenaire/Logo_centre_de_passation_BULATS-300x212.jpg') }}" width="150" height="100" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="{{ asset('img/partenaire/logopoleemploi__064221800_1520_09112013-300x240.jpg') }}" width="150" height="100" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="{{ asset('img/partenaire/dokelio-300x283.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="{{ asset('img/partenaire/preventionroutiere-300x128.png') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="{{ asset('img/partenaire/DIRECCTE-225x300.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="{{ asset('img/partenaire/prefecture93-150x150.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="img/our-clients/5.png" alt="">
+                                </a>
+                            </div>
+                            <div class="span2">
+                                <a href="#" rel="external">
+                                    <img src="img/our-clients/6.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Our Clients End -->
+
+            <div class="space50"></div>
+
+        </div>
+    </div>
+    <!--
+
+
+{% endblock %}

@@ -1,0 +1,203 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="row t-container">
+
+                <!-- Logo -->
+                <div class="span3">
+                    <div class="logo">
+                        <a href="{{ path('app_front_index') }}"><img src="img/logo-header.png" alt="Logo site web"></a>
+                        <span class="text-muted">Trouvez la formation qui vous correspond !</span>
+                    </div>
+                </div>
+
+                <div class="span9">
+                    <div class="row space60"></div>
+                    <nav id="nav" role="navigation">
+                        <a href="#nav" title="Show navigation">Show navigation</a>
+                        <a href="#" title="Hide navigation">Hide navigation</a>
+                        <ul class="clearfix">
+                            <li><a href="{{ path('app_front_index') }}" title="">ACCUEIL</a></li>
+                            <li class="active"><a href="{{ path('app_front_etapeasuivre') }}" title="">ÉTAPE A SUIVRE</a></li>
+                            <li><a href="gallery.htm" title="">LES FORMATIONS</a></li>
+                            <li><a href="services.htm" title="">MES DOCUMENTS</a></li>
+                            <li><a href="components.htm" title="">Features</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row space40"></div>
+        </div>
+    </header>
+
+    <section id="titlebar">
+        <!-- Container -->
+        <div class="container">
+
+            <div class="eight columns">
+                <h1 class="text-center">ÉTAPE A SUIVRE</h1>
+            </div>
+
+        </div>
+        <!-- Container / End -->
+    </section>
+
+
+    <!-- Content -->
+    <div id="content">
+        <div class="container">
+
+            <div class="row">
+                <!--  etape une -->
+                <div class="span12">
+                    <h4>Retrouvez ci-dessous les différentes étapes à suivre pour s’inscrire à la formation souhaitée.</h4>
+
+                    <!-- Typography Row -->
+                    <div class="row t-row">
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                        <div class="span9">
+                            <h2>1) SE CONNECTER :</h2>
+                            <p>Veuillez vous connecter à votre espace MonCompteFormation pour voir les heures dont vous disposez.</p>
+                        </div>
+                        <div class="space30 visible-phone"></div>
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                    </div>
+                    <!-- Typography Row End -->
+                        <iframe src="https://www.moncompteactivite.gouv.fr/cpa-prive/html/#/connexion" width="1000" height="1600"></iframe>
+
+                    <div class="row space10"></div>
+
+                    <div class="row space50"></div>
+                </div>
+                <!--  etape deux -->
+                <div class="span12">
+                    <!-- Typography Row -->
+                    <div class="row t-row">
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                        <div class="span9">
+                            <h2>2) LISTE DES FORMATIONS :</h2>
+                            <p>Veuillez consulter la page suivante :</p>
+                            <a href="" target="_blank">
+                                <div class="btn btn-blue f-left">
+                                <!-- Title -->
+                                <h3><i class="icon-signin hidden-tablet"></i> Listes des formations</h3>
+                            </div>
+                            </a>
+
+                        </div>
+                        <div class="space30 visible-phone"></div>
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                    </div>
+                    <!-- Typography Row End-->
+
+                    <div class="row space10"></div>
+
+                    <div class="row space50"></div>
+                </div>
+
+                <!--  etape trois -->
+                <div class="span12">
+                    <!-- Typography Row -->
+                    <div class="row t-row">
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                        <div class="span9">
+                            <h2>3) MES DOCUMENTS :</h2>
+                            <p>Télécharger les documents nécessaires et les signer : pour se renseigner, s’inscrire à la formation choisie dans la liste des formations.</p>
+                            <p>Veuillez consulter la page suivante :</p>
+                            <a href="" target="_blank">
+                                <div class="btn btn-blue f-left">
+                                    <!-- Title -->
+                                    <h3><i class="icon-signin hidden-tablet"></i> MES DOCUMENTS</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="space30 visible-phone"></div>
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                    </div>
+                    <!-- Typography Row End-->
+
+                    <div class="row space10"></div>
+
+                    <div class="row space50"></div>
+                </div>
+
+                <!--  etape quatre-->
+                <div class="span12">
+                    <!-- Typography Row -->
+                    <div class="row t-row">
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                        <div class="span9">
+                            <h2>4) ENVOI DES DOCUMENTS :</h2>
+                            <p>À quel organisme envoyer les documents requis : à l’OCPA ; mais lequel ?</p>
+                            <p>Comment retrouver son OPCA :</p>
+
+                            <div class="span4">
+                                <h3>List</h3>
+                                <ol>
+
+                                    <li>Retrouvez le code NAF ou APE (4 chiffres 1 lettres) en recherchant l’organisme pour lequel vous travaillez ici :</li>
+                                    <a href="" TARGET="_blank" class="btn btn-blue">RECHERCHE CODE NAF</a>
+
+                                    <li>Retrouvez votre OPCA en entrant le code NAF ou APE ici :</li>
+                                    <a href="" TARGET="_blank" class="btn btn-blue">RECHERCHE OPCA</a>
+
+                                </ol>
+                            </div>
+
+                        </div>
+
+                        <div class="space30 visible-phone"></div>
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                    </div>
+                    <!-- Typography Row End-->
+
+                    <div class="row space10"></div>
+
+                    <div class="row space50"></div>
+                </div>
+
+                <!--  etape cinq -->
+                <div class="span12">
+                    <!-- Typography Row -->
+                    <div class="row t-row">
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                        <div class="span9">
+                            <h2>5) DURÉE DE TRAITEMENT :</h2>
+                            <p>La durée de traitement de votre dossier de formation est estimé à moins d’un mois.</p>
+                        </div>
+
+                        <div class="space30 visible-phone"></div>
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                    </div>
+                    <!-- Typography Row End-->
+
+                    <div class="row space10"></div>
+
+                    <div class="row space50"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Content End -->
+
+
+{% endblock %}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="not-ie" lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if (gte IE 9)|!(IE)]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <![endif]-->
+
+    <!-- Favicon -->
+
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('img/favico/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favico/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/favico/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favico/favicon-16x16.png') }}">
+    <link rel="manifest" href="img/favico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+
+   {% block style %}
+       {% include('inc/css.html.twig') %}
+   {% endblock %}
+
+    <!-- Internet Explorer condition - HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+{% block body %}
+
+{% endblock %}
+
+
+
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="span5">
+                <h3>Contact Form</h3>
+                <div>
+                    <form class="form-main" name="ajax-form" id="ajax-form" action="#" method="post">
+                        <div id="ajaxsuccess">E-mail was successfully sent.</div>
+                        <div class="error" id="err-name">Please enter name</div>
+                        <input name="name" id="name" type="text" value="Name" onfocus="if(this.value == 'Name') this.value='';" onblur="if(this.value == '') this.value='Name';">
+
+                        <div class="error" id="err-email">Please enter e-mail</div>
+                        <div class="error" id="err-emailvld">E-mail is not a valid format</div>
+                        <input  name="email" id="email" type="text" value="E-mail" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';">
+
+                        <div class="error" id="err-message">Please enter message</div>
+                        <textarea  name="message" id="message" onfocus="if(this.value == 'Message') this.value='';" onblur="if(this.value == '') this.value='Message';">Message</textarea><br>
+                        <div>
+                            <div class="error" id="err-form">There was a problem validating the form please check!</div>
+                            <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                            <div class="error" id="err-state"></div>
+                        </div>
+                        <button id="send" class="btn f-right">Send Message <i class="icon-ok"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="span3 offset3">
+                <h3>Ou nous trouver ? </h3>
+                25 Rue Benoît Frachon<br>
+                93000 Bobigny<br>
+                France<br>
+                <br>
+                <i class="icon-phone"></i>01 82 02 89 15<br>
+                <i class="icon-phone"></i>06 59 64 54 61<br>
+                <i class="icon-envelope"></i><a href="mailto:contact@moncpf.info">contact@moncpf.info</a><br>
+                <i class="icon-home"></i><a href="{{ path('app_front_index') }}">www.moncpf.info</a>
+
+
+            </div>
+        </div>
+
+        <div class="row space50"></div>
+        <div class="row">
+            <div class="span6">
+                <div class="logo-footer">
+                    Design by <a href="https://www.freshdesignweb.com">freshDesignweb</a>
+                </div>
+            </div>
+            <div class="span6 right">
+                &copy; {{ 'now' | date('Y') }} moncpf.info tout droit réserver
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- Footer End -->
+
+{% block javascript %}
+{% include('inc/js.html.twig') %}
+{% endblock %}
+
+</body>
+</html>
