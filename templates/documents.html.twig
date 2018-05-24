@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="row t-container">
+
+                <!-- Logo -->
+                <div class="span3">
+                    <div class="logo">
+                        <a href="{{ path('app_front_index') }}"><img src="img/logo-header.png" alt="Logo site web"></a>
+                        <span class="text-muted">Trouvez la formation qui vous correspond !</span>
+                    </div>
+                </div>
+
+                <div class="span9">
+                    <div class="row space60"></div>
+                    <nav id="nav" role="navigation">
+                        <a href="#nav" title="Show navigation">Show navigation</a>
+                        <a href="#" title="Hide navigation">Hide navigation</a>
+                        <ul class="clearfix">
+                            <li><a href="{{ path('app_front_index') }}" title="">ACCUEIL</a></li>
+                            <li><a href="{{ path('app_front_etapeasuivre') }}" title="">ÉTAPE A SUIVRE</a></li>
+                            <li><a href="{{ path('app_front_formations') }}" title="">LES FORMATIONS</a></li>
+                            <li class="active"><a href="{{ path('app_front_document') }}" title="">MES DOCUMENTS</a></li>
+                            <li><a href="components.htm" title="">Features</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row space40"></div>
+
+        </div>
+    </header>
+
+    <section id="titlebar">
+        <!-- Container -->
+        <div class="container">
+
+            <div class="eight columns">
+                <h1 class="text-center">MES DOCUMENTS</h1>
+            </div>
+
+        </div>
+        <!-- Container / End -->
+    </section>
+
+    <!-- Content -->
+    <div id="content">
+        <div class="container">
+
+            <div class="row">
+                <!--  etape une -->
+                <div class="span12">
+                    <h4>Retrouvez ci-dessous tout les document a télécharger</h4>
+
+                    <!-- Typography Row -->
+                    <div class="row t-row">
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                        <div class="span9">
+                            <h2>Mes documents</h2>
+                            <p>Vous trouverez, disponibles en téléchargement sur cette page, tous les documents nécessaires pour l’inscription à la formation que vous souhaitez suivre. (C’est l’étape n°3 du guide des étapes à suivre : remplir et signer les documents).</p>
+                            <p>Vous pourrez aussi trouver des catalogues de formation avec tous les détails et objectifs des formations proposées.</p>
+                        </div>
+                        <div class="space30 visible-phone"></div>
+                        <!-- Line -->
+                        <div class="span12"><hr></div>
+                    </div>
+                    <!-- Typography Row End -->
+                    <div class="row space10"></div>
+
+                    <div class="row space50"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Content End -->
+
+
+{% endblock %}

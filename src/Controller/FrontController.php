@@ -53,6 +53,20 @@ class FrontController extends Controller {
 
     }
 
+    /**
+     * @Route("/mes-documents")
+     * @return Response
+     */
+
+    public function document(): Response {
+
+        return $this->render('documents.html.twig', [
+            'title' => 'Mes documents',
+            'description' => 'Vous trouverez ici tous les documents utiles et à remplir pour s\'inscrire à la formation que vous avez choisi.',
+            'keywords' => 'Mon compte, CPF, inscription, documents'
+        ]);
+
+    }
 
 
 
