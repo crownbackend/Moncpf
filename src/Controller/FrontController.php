@@ -54,14 +54,14 @@ class FrontController extends Controller {
     }
 
     /**
-     * @Route("/mes-documents")
+     * @Route("/mon-espace")
      * @return Response
      */
 
-    public function document(): Response {
+    public function monEspace(): Response {
 
-        return $this->render('documents.html.twig', [
-            'title' => 'Mes documents',
+        return $this->render('mon_espace.html.twig', [
+            'title' => 'Mon espace',
             'description' => 'Vous trouverez ici tous les documents utiles et à remplir pour s\'inscrire à la formation que vous avez choisi.',
             'keywords' => 'Mon compte, CPF, inscription, documents'
         ]);

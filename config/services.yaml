@@ -1,7 +1,18 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'en'
+    locale: 'fr'
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: moncpf
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    #mailer_encryption: ssl
+    mailer_port: 1025
+    mailer_host: 127.0.0.1:1025
+    mailer_user: null
+    mailer_password: null
 
 services:
     # default configuration for services in *this* file

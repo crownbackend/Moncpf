@@ -25,8 +25,8 @@
                             <li><a href="{{ path('app_front_index') }}" title="">ACCUEIL</a></li>
                             <li><a href="{{ path('app_front_etapeasuivre') }}" title="">ÉTAPE A SUIVRE</a></li>
                             <li><a href="{{ path('app_front_formations') }}" title="">LES FORMATIONS</a></li>
-                            <li class="active"><a href="{{ path('app_front_document') }}" title="">MES DOCUMENTS</a></li>
-                            <li><a href="components.htm" title="">Features</a>
+                            <li class="active"><a href="{{ path('app_front_monespace') }}" title="">MON ESPACE</a></li>
+                            <li><a href="components.htm" title="">E-LEARNING</a>
                             </li>
                         </ul>
                     </nav>
@@ -42,7 +42,7 @@
         <div class="container">
 
             <div class="eight columns">
-                <h1 class="text-center">MES DOCUMENTS</h1>
+                <h1 class="text-center">MON ESPACE</h1>
             </div>
 
         </div>
@@ -56,16 +56,46 @@
             <div class="row">
                 <!--  etape une -->
                 <div class="span12">
-                    <h4>Retrouvez ci-dessous tout les document a télécharger</h4>
+                    <h4></h4>
 
                     <!-- Typography Row -->
                     <div class="row t-row">
                         <!-- Line -->
                         <div class="span12"><hr></div>
                         <div class="span9">
-                            <h2>Mes documents</h2>
-                            <p>Vous trouverez, disponibles en téléchargement sur cette page, tous les documents nécessaires pour l’inscription à la formation que vous souhaitez suivre. (C’est l’étape n°3 du guide des étapes à suivre : remplir et signer les documents).</p>
-                            <p>Vous pourrez aussi trouver des catalogues de formation avec tous les détails et objectifs des formations proposées.</p>
+
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                                    <a class="btn btn-blue" href="{{ path('fos_user_security_logout') }}">
+                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                {% else %}
+
+                            <h2>INSCRIPTION</h2>
+                            <p>Veuillez consulter la page suivante pour vous inscrire :</p>
+
+                                <a href="{{ path('fos_user_registration_register') }}">
+                                    <div class="btn btn-blue f-left">
+                                        <!-- Title -->
+                                        <h3><i class="icon-signin hidden-tablet"></i> JE M'INSCRIT</h3>
+                                    </div>
+                                </a>
+                                    <div class="row space10"></div>
+
+                                    <div class="row space50"></div>
+
+                            <h2>CONNEXION</h2>
+                            <p>Veuillez consulter la page suivante pour vous connecter :</p>
+                            <a class="btn btn-blue" href="{{ path('fos_user_security_login') }}">
+
+
+                                <h3><i class="icon-signin hidden-tablet"></i>{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</h3>
+
+                            </a>
+
+
+                                {% endif %}
+
                         </div>
                         <div class="space30 visible-phone"></div>
                         <!-- Line -->

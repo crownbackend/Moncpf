@@ -26,8 +26,8 @@
                             <li><a href="{{ path('app_front_index') }}" title="">ACCUEIL</a></li>
                             <li class="active"><a href="{{ path('app_front_etapeasuivre') }}" title="">ÉTAPE A SUIVRE</a></li>
                             <li><a href="{{ path('app_front_formations') }}" title="">LES FORMATIONS</a></li>
-                            <li><a href="{{ path('app_front_document') }}" title="">MES DOCUMENTS</a></li>
-                            <li><a href="components.htm" title="">Features</a>
+                            <li><a href="{{ path('app_front_monespace') }}" title="">MON ESPACE</a></li>
+                            <li><a href="components.htm" title="">E-LEARNING</a>
                             </li>
                         </ul>
                     </nav>
@@ -87,7 +87,7 @@
                         <div class="span9">
                             <h2>2) LISTE DES FORMATIONS :</h2>
                             <p>Veuillez consulter la page suivante :</p>
-                            <a href="" target="_blank">
+                            <a href="{{ path('app_front_formations') }}" target="_blank">
                                 <div class="btn btn-blue f-left">
                                 <!-- Title -->
                                 <h3><i class="icon-signin hidden-tablet"></i> Listes des formations</h3>
@@ -113,13 +113,13 @@
                         <!-- Line -->
                         <div class="span12"><hr></div>
                         <div class="span9">
-                            <h2>3) MES DOCUMENTS :</h2>
+                            <h2>3) MON ESPACE :</h2>
                             <p>Télécharger les documents nécessaires et les signer : pour se renseigner, s’inscrire à la formation choisie dans la liste des formations.</p>
                             <p>Veuillez consulter la page suivante :</p>
-                            <a href="" target="_blank">
+                            <a href="{{ path('app_front_monespace') }}" target="_blank">
                                 <div class="btn btn-blue f-left">
                                     <!-- Title -->
-                                    <h3><i class="icon-signin hidden-tablet"></i> MES DOCUMENTS</h3>
+                                    <h3><i class="icon-signin hidden-tablet"></i> MON ESPACE</h3>
                                 </div>
                             </a>
                         </div>
@@ -151,10 +151,10 @@
                                 <ol>
 
                                     <li>Retrouvez le code NAF ou APE (4 chiffres 1 lettres) en recherchant l’organisme pour lequel vous travaillez ici :</li>
-                                    <a href="" TARGET="_blank" class="btn btn-blue">RECHERCHE CODE NAF</a>
+                                    <a href="https://www.societe.com/" TARGET="_blank" class="btn btn-blue">RECHERCHE CODE NAF</a>
 
                                     <li>Retrouvez votre OPCA en entrant le code NAF ou APE ici :</li>
-                                    <a href="" TARGET="_blank" class="btn btn-blue">RECHERCHE OPCA</a>
+                                    <a href="http://www.dif69.com/trouver-son-opca.html" TARGET="_blank" class="btn btn-blue">RECHERCHE OPCA</a>
 
                                 </ol>
                             </div>
