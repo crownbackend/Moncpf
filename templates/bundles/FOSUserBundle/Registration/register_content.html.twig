@@ -1,6 +1,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-
+<div class="row space50"></div>
 
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
@@ -9,29 +9,104 @@
     {{ form_widget(form.email) }}
     {{ form_errors(form.email) }}
 
+<div class="row space25"></div>
+
     {{ form_label(form.plainPassword.first) }}
-    {{ form_widget(form.plainPassword.first) }}
+    {{ form_widget(form.plainPassword.first, {'attr' : {'class' : 'form-info'}}) }}
     {{ form_errors(form.plainPassword.first) }}
 
+<div class="row space25"></div>
+
     {{ form_label(form.plainPassword.second) }}
-    {{ form_widget(form.plainPassword.second) }}
+    {{ form_widget(form.plainPassword.second, {'attr' : {'class' : 'form-info'}}) }}
     {{ form_errors(form.plainPassword.second) }}
 
-    {{ form_label(form.nom) }}
+<div class="row space25"></div>
+
+    {{ form_label(form.nom, 'Nom') }}
     {{ form_widget(form.nom) }}
     {{ form_errors(form.nom) }}
 
-    {{ form_label(form.prenom) }}
+<div class="row space25"></div>
+
+    {{ form_label(form.prenom, 'Prénom') }}
     {{ form_widget(form.prenom) }}
     {{ form_errors(form.prenom) }}
+
+<div class="row space25"></div>
 
     {{ form_label(form.numeroDeTelephone) }}
     {{ form_widget(form.numeroDeTelephone) }}
     {{ form_errors(form.numeroDeTelephone) }}
 
+<div class="row space25"></div>
 
+    {{ form_label(form.identity.society, 'Sociète') }}
+    {{ form_widget(form.identity.society) }}
+    {{ form_errors(form.identity.society) }}
+
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.zipCode, 'Code postale') }}
+    {{ form_widget(form.identity.zipCode) }}
+    {{ form_errors(form.identity.zipCode) }}
+
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.city, 'Ville') }}
+    {{ form_widget(form.identity.city) }}
+    {{ form_errors(form.identity.city) }}
+
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.numberSiret, 'Numéro de siret') }}
+    {{ form_widget(form.identity.numberSiret) }}
+    {{ form_errors(form.identity.numberSiret) }}
+
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.codeNaf, 'Code naf') }}
+<a href="https://www.societe.com/" target="_blank" class="bouton">Cliquer ici pour trouver votre code naf</a></br>
+    {{ form_widget(form.identity.codeNaf) }}
+    {{ form_errors(form.identity.codeNaf) }}
+
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.opca, 'Code OPCA') }}
+<a href="http://www.dif69.com/trouver-son-opca.html" target="_blank" class="bouton">Cliquer ici pour trouver votre code naf</a></br>
+    {{ form_widget(form.identity.opca) }}
+    {{ form_errors(form.identity.opca) }}
+
+<div class="row space25"></div>
+
+
+    {{ form_label(form.identity.professionalCategory, 'Categorie professionnel') }}
+    {{ form_widget(form.identity.professionalCategory) }}
+    {{ form_errors(form.identity.professionalCategory) }}
+
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.typeOfContract, 'Type de contrat') }}
+    {{ form_widget(form.identity.typeOfContract) }}
+    {{ form_errors(form.identity.typeOfContract) }}
+
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.selectedTraining, 'Formation souhaiter') }}
+    {{ form_widget(form.identity.selectedTraining) }}
+    {{ form_errors(form.identity.selectedTraining) }}
+
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.cpfTime, 'Vos heure CPF') }}
+    {{ form_widget(form.identity.cpfTime) }}
+    {{ form_errors(form.identity.cpfTime) }}
+<div class="row space25"></div>
 
     <div>
         <input class="btn btn-blue" type="submit" value="{{ 'registration.submit'|trans }}" />
     </div>
+
 {{ form_end(form) }}
+
+<div class="row space50"></div>

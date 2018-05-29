@@ -18,14 +18,24 @@ class ComplementInfo
     private $id;
 
     /**
+     * @Assert\Length(
+     *      min = 3,
+     *      max = 50,
+     *      minMessage = "Votre entreprise doit avoir minimum {{ limit }} caractères !",
+     *      maxMessage = "Votre entreprise ne doit pas dépasser {{ limit }} caractères !"
+     * )
      * @ORM\Column(type="string", length=255)
      */
     private $society;
 
     /**
+     * @Assert\Regex(
+     *     pattern = "/^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/",
+     *     message = "Votre code postal n'est pas valide"
+     * )
      * @ORM\Column(type="string", length=255)
      */
-    private $cityOfSociety;
+    private $zipCode;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -52,10 +62,31 @@ class ComplementInfo
      */
     private $cpfTime;
 
+
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "remove"})
+     * @Assert\Regex(
+     *     pattern = "/^[0-9]{4}[A-Z]{1}$/",
+     *     match = true,
+     *     message = "Votre code NAF doit comporter une suite de chiffres de 4 chiffres et une lettre en majuscule"
+     * )
+     * @ORM\Column(type="string", length=255)
      */
-    private $identityUser;
+    private $codeNaf;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $opca;
+
+    /**
+     * @Assert\Regex (
+     *     pattern = "/^[a-zA-Zéèêëàâîïôöûü-]+$/",
+     *     message = "Votre ville n'est pas correcte"
+     * )
+     * @ORM\Column(type="string", length=255)
+     */
+    private $city;
+
 
     public function getId()
     {
@@ -74,14 +105,14 @@ class ComplementInfo
         return $this;
     }
 
-    public function getCityOfSociety(): ?string
+    public function getZipCode(): ?string
     {
-        return $this->cityOfSociety;
+        return $this->zipCode;
     }
 
-    public function setCityOfSociety(string $cityOfSociety): self
+    public function setZipCode(string $zipCode): self
     {
-        $this->cityOfSociety = $cityOfSociety;
+        $this->zipCode = $zipCode;
 
         return $this;
     }
@@ -146,15 +177,41 @@ class ComplementInfo
         return $this;
     }
 
-    public function getIdentityUser(): ?User
+
+    public function getCodeNaf(): ?string
     {
-        return $this->identityUser;
+        return $this->codeNaf;
     }
 
-    public function setIdentityUser(?User $identityUser): self
+    public function setCodeNaf(string $codeNaf): self
     {
-        $this->identityUser = $identityUser;
+        $this->codeNaf = $codeNaf;
 
         return $this;
     }
+
+    public function getOpca(): ?string
+    {
+        return $this->opca;
+    }
+
+    public function setOpca(string $opca): self
+    {
+        $this->opca = $opca;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
 }

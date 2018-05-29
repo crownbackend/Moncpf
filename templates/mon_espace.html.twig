@@ -65,10 +65,21 @@
                         <div class="span9">
 
                                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                                    <a class="btn btn-blue" href="{{ path('fos_user_security_logout') }}">
-                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    <h2>Mon profile</h2>
+                                    <p>Veuillez consulter la page suivante pour voir votre profile:</p>
+
+                                    <a href="{{ path('fos_user_profile_show') }}">
+                                        <div class="btn btn-blue f-left">
+                                            <!-- Title -->
+                                            <h3><i class="icon-signin hidden-tablet"></i> Mon profile</h3>
+                                        </div>
                                     </a>
+                                    <div class="row space10"></div>
+
+                                    <div class="row space50"></div>
+
+
+
                                 {% else %}
 
                             <h2>INSCRIPTION</h2>

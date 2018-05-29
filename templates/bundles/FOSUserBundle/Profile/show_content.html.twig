@@ -1,0 +1,28 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+
+    <div class="row space10"></div>
+
+    <div class="row space50"></div>
+
+    <p class="profile">{{ 'profile.show.email'|trans }} : {{ user.email }}</p>
+    <p class="profile">Nom : {{ user.nom }}</p>
+    <p class="profile">Prénom : {{ user.prenom }}</p>
+    <p class="profile">Numéro de téléphone : {{ user.numeroDeTelephone }}</p>
+    <p class="profile">sociète : {{ user.identity.society }}</p>
+    <p class="profile">Ville : {{ user.identity.city }}</p>
+    <p class="profile">Code postale : {{ user.identity.zipCode }}</p>
+    <p class="profile">numberSiret : {{ user.identity.numberSiret }}</p>
+    <p class="profile">codeNaf : {{ user.identity.codeNaf }}</p>
+    <p class="profile">opca : {{ user.identity.opca }}</p>
+    <p class="profile">professionalCategory : {{ user.identity.professionalCategory }}</p>
+    <p class="profile">typeOfContract : {{ user.identity.typeOfContract }}</p>
+    <p class="profile">formation : {{ user.identity.selectedTraining }}</p>
+    <p class="profile">cpf : {{ user.identity.cpfTime }}</p>
+
+
+    <div class="row space10"></div>
+
+    <div class="row space50"></div>
+</div>

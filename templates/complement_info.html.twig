@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="row t-container">
+
+                <!-- Logo -->
+                <div class="span3">
+                    <div class="logo">
+                        <a href="{{ path('app_front_index') }}"><img src="img/logo-header.png" alt="Logo site web"></a>
+                        <span class="text-muted">Trouvez la formation qui vous correspond !</span>
+                    </div>
+                </div>
+
+                <div class="span9">
+                    <div class="row space60"></div>
+                    <nav id="nav" role="navigation">
+                        <a href="#nav" title="Show navigation">Show navigation</a>
+                        <a href="#" title="Hide navigation">Hide navigation</a>
+                        <ul class="clearfix">
+                            <li class="active"><a href="{{ path('app_front_index') }}" title="">ACCUEIL</a></li>
+                            <li><a href="{{ path('app_front_etapeasuivre') }}" title="">ÉTAPE A SUIVRE</a></li>
+                            <li><a href="{{ path('app_front_formations') }}" title="">LES FORMATIONS</a></li>
+                            <li><a href="{{ path('app_front_monespace') }}" title="">MON ESPACE</a></li>
+                            <li><a href="components.htm" title="">E-LEARNING</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row space40"></div>
+
+        </div>
+    </header>
+
+    <section id="titlebar">
+        <!-- Container -->
+        <div class="container">
+
+            <div class="eight columns">
+                <h1 class="text-center">MON ESPACE</h1>
+            </div>
+
+        </div>
+        <!-- Container / End -->
+    </section>
+
+    <div class="row space50"></div>
+
+    <!-- Content -->
+    <div id="content">
+        <div class="text-center">
+            <div class="container">
+
+                {{ form_start(addInfo) }}
+
+                    {{ form_label(addInfo.society, 'Sociéte') }}
+                    {{ form_widget(addInfo.society) }}
+
+                    {{ form_label(addInfo.city, 'Ville') }}
+                    {{ form_widget(addInfo.city) }}
+
+                    {{ form_label(addInfo.zipCode, 'Code Postal') }}
+                    {{ form_widget(addInfo.zipCode) }}
+
+
+                    {{ form_label(addInfo.numberSiret, 'Numéro de siret') }}
+                    {{ form_widget(addInfo.numberSiret) }}
+
+
+                    {{ form_label(addInfo.codeNaf, 'Code Naf') }}
+                    {{ form_widget(addInfo.codeNaf) }}
+
+                    {{ form_label(addInfo.opca, 'Code OPCA') }}
+                    {{ form_widget(addInfo.opca) }}
+
+                    {{ form_label(addInfo.professionalCategory, 'Catégorie') }}
+                    {{ form_widget(addInfo.professionalCategory) }}
+
+                    {{ form_label(addInfo.typeOfContract, 'Type de contart') }}
+                    {{ form_widget(addInfo.typeOfContract) }}
+
+
+                    {{ form_label(addInfo.selectedTraining, 'Formation choisie') }}
+                    {{ form_widget(addInfo.selectedTraining) }}
+
+                    {{ form_label(addInfo.cpfTime, 'Vos heure CPF') }}
+                    {{ form_widget(addInfo.cpfTime) }}
+
+
+                    <div class="row space10"></div>
+                    <div class="row space10"></div>
+
+                    <input type="submit" value="Envoyer mes informations" class="btn btn-blue">
+
+                {{ form_end(addInfo) }}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

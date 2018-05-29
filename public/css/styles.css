@@ -941,6 +941,14 @@ table a:hover{
 }
 .clear{
 	clear:both;}
+
+.form-info {
+	width: 300px;
+}
+
+.form-info-select {
+	width: 315px;
+}
 	
 /* --------------------------------------------------------	*/
 /*  Paging  */
@@ -1528,4 +1536,29 @@ table a:hover{
 .social-network.zerply:hover,.active .social-network.zerply{ background-position: -1152px -24px}
 .text-muted {
 	color: #6c757d !important;
+}
+
+
+.profile {
+	font-size: 30px;
+	padding: 10px;
+}
+.profile:hover {
+	color: tomato;
+	text-decoration: none;
+	transition: 1s;
+}
+
+.bouton {
+	color:#fff;
+	background:#fb8865;
+	height:48px;
+	line-height:48px;
+	padding:0px 22px;
+	text-shadow:none;
+	border-radius:2px;
+	-webkit-box-shadow:rgba(0, 0, 0, 0) 0 0 0 !important;
+	box-shadow:rgba(0, 0, 0, 0) 0 0 0 !important;
+	border:0px;
+	margin-bottom:8px;
 }

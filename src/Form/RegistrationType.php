@@ -16,14 +16,28 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', TextType::class)
-            ->add('prenom', TextType::class)
-            ->add('numeroDeTelephone', NumberType::class)
-            ->add('email', EmailType::class, [
-                'constraints' => [ new Assert\Regex([
-                    'pattern' => '/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/',
-                    'message' => false
-                ])]
+            ->add('nom', TextType::class, [
+                'attr' => [
+                    'class' => 'form-info'
+                ]
+            ])
+            ->add('prenom', TextType::class, [
+                'attr' => [
+                    'class' => 'form-info'
+                ]
+            ])
+            ->add('numeroDeTelephone', null, [
+                'attr' => [
+                    'class' => 'form-info',
+                    'placeholder' => 'Votre numéro de télephone'
+                ]
+            ])
+            ->add('identity', ComplementInfoType::class)
+            ->add('email', null, [
+                'attr' => [
+                    'class' => 'form-info',
+                    'placeholder' => 'Vous aller recevoir une confirmations par mail'
+                ]
             ])
             ->remove('username')
         ;

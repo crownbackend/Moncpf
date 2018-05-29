@@ -2,7 +2,7 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="not-ie" lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="not-ie" lang="fr"> <!--<![endif]-->
 <head>
     <!-- Basic Meta Tags -->
     <meta charset="utf-8">
@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favico/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/favico/favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favico/favicon-16x16.png') }}">
-    <link rel="manifest" href="img/favico/manifest.json">
+    <link rel="manifest" href="{{ asset('img/favico/manifest.json') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -44,6 +44,19 @@
 </head>
 
 <body>
+<div class="right">
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+<a class="btn btn-blue" href="{{ path('fos_user_security_logout') }}">
+    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+</a>
+{% endif %}
+
+{% if is_granted("ROLE_ADMIN") %}
+        <a class="btn btn-blue" target="_blank" href="{{ path('app_back_index') }}">Espace Administration</a>
+{% endif %}
+</div>
 
 {% block body %}
 

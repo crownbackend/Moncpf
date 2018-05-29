@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\ComplementInfo;
+use App\Form\ComplementInfoType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -65,6 +67,43 @@ class FrontController extends Controller {
             'description' => 'Vous trouverez ici tous les documents utiles et à remplir pour s\'inscrire à la formation que vous avez choisi.',
             'keywords' => 'Mon compte, CPF, inscription, documents'
         ]);
+
+    }
+
+    /**
+     * @Route("/mes-infos")
+     * @param Request $request
+     * @return Response
+     */
+
+    public function  info(Request $request): Response {
+
+
+        $info = new ComplementInfo();
+
+        $addInfo = $this->createForm(ComplementInfoType::class);
+
+        $addInfo->handleRequest($request);
+
+        if($addInfo->isSubmitted() && $addInfo->isValid()) {
+
+            $info = $addInfo->getData();
+
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($info);
+
+            $manager->flush();
+
+        }
+
+
+        return $this->render('complement_info.html.twig', [
+            'title' => 'Envoyer mes informations et joindre mes fichier',
+            'description' => 'Envoyer mes informations et joindre mes fichier',
+            'keywords' => 'Envoyer mes informations et joindre mes fichier',
+            'addInfo' => $addInfo->createView()
+        ]);
+
 
     }
 
