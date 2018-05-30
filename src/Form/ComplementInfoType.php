@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\ComplementInfo;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -20,19 +21,35 @@ class ComplementInfoType extends AbstractType
                 'attr' => [
                     'placeholder' => 'sociète dans la quel vous travailler',
                     'class' => 'form-info'
-                ]
+                ],
+                'constraints' => (new Assert\Length([
+                    'min' => '3',
+                    'max' => '50',
+                    'minMessage' => 'Votre entreprise doit avoir minimum {{ limit }} caractères !',
+                    'maxMessage' => 'Votre entreprise ne doit pas dépasser {{ limit }} caractères !'
+                ]))
             ])
             ->add('city', TextType::class, [
                 'attr' => [
                     'class' => 'form-info',
                     'placeholder' => 'La ville de votre entreprise'
-                ]
+                ],
+                'constraints' => (new Assert\Length([
+                    'min' => '2',
+                    'max' => '50',
+                    'minMessage' => 'Votre ville doit avoir minimum 2 lettre',
+                    'maxMessage' => 'Votre ville doit avoir minimum 3 lettre',
+                ]))
             ])
             ->add('zipCode', null, [
                 'attr' => [
                     'class' => 'form-info',
                     'placeholder' => 'Code postale de votre sociète'
-                ]
+                ],
+                'constraints' => (new Assert\Regex([
+                    'pattern' => '/^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/',
+                    'message' => 'Votre code postal n\'est pas valide'
+                ]))
             ])
             ->add('professionalCategory', ChoiceType::class, [
                 'choices' => [
@@ -116,13 +133,16 @@ class ComplementInfoType extends AbstractType
             ->add('codeNaf', null, [
                 'attr' => [
                     'class' => 'form-info'
-                ]
+                ],
+                'constraints' => (new Assert\Regex([
+                    'pattern' => '/^[0-9]{4}[A-Z]{1}$/',
+                    'message' => 'Votre code naf doit comporter 4 chiffre et une lettre en majuscule'
+                ]))
+
             ])
-            ->add('opca', null, [
-                'attr' => [
-                    'class' => 'form-info'
-                ]
-            ])
+            ->add('pdfFile', FileType::class)
+            ->add('pdfFile2', FileType::class)
+            ->add('pdfFile3', FileType::class)
         ;
     }
 

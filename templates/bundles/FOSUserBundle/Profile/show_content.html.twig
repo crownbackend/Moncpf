@@ -6,20 +6,22 @@
 
     <div class="row space50"></div>
 
-    <p class="profile">{{ 'profile.show.email'|trans }} : {{ user.email }}</p>
-    <p class="profile">Nom : {{ user.nom }}</p>
-    <p class="profile">Prénom : {{ user.prenom }}</p>
-    <p class="profile">Numéro de téléphone : {{ user.numeroDeTelephone }}</p>
-    <p class="profile">sociète : {{ user.identity.society }}</p>
-    <p class="profile">Ville : {{ user.identity.city }}</p>
-    <p class="profile">Code postale : {{ user.identity.zipCode }}</p>
-    <p class="profile">numberSiret : {{ user.identity.numberSiret }}</p>
-    <p class="profile">codeNaf : {{ user.identity.codeNaf }}</p>
-    <p class="profile">opca : {{ user.identity.opca }}</p>
-    <p class="profile">professionalCategory : {{ user.identity.professionalCategory }}</p>
-    <p class="profile">typeOfContract : {{ user.identity.typeOfContract }}</p>
-    <p class="profile">formation : {{ user.identity.selectedTraining }}</p>
-    <p class="profile">cpf : {{ user.identity.cpfTime }}</p>
+    <p class="profile">{{ 'profile.show.email'|trans }} : <strong>{{ user.email }}</strong></p>
+    <p class="profile">Nom : <strong>{{ user.nom }}</strong></p>
+    <p class="profile">Prénom : <strong>{{ user.prenom }}</strong></p>
+    <p class="profile">Numéro de téléphone : <strong>{{ user.numeroDeTelephone }}</strong></p>
+    <p class="profile">sociète : <strong>{{ user.identity.society }}</strong></p>
+    <p class="profile">Ville : <strong>{{ user.identity.city }}</strong></p>
+    <p class="profile">Code postale : <strong>{{ user.identity.zipCode }}</strong></p>
+    <p class="profile">Numéro de siret : <strong>{{ user.identity.numberSiret }}</strong></p>
+    <p class="profile">Code Naf : <strong>{{ user.identity.codeNaf }}</strong></p>
+    <p class="profile">Catégorie professionnelle : <strong>{{ user.identity.professionalCategory }}</strong></p>
+    <p class="profile">Type de contrat : <strong>{{ user.identity.typeOfContract }}</strong></p>
+    <p class="profile">Formation choisie : <strong>{{ user.identity.selectedTraining }}</strong></p>
+    <p class="profile">Mes heures CPF : <strong>{{ user.identity.cpfTime }} Heures</strong></p>
+    <p class="profile">pièce d'identité : <strong><a class="btn btn-blue" href="{{ asset('files/'~user.identity.pdfName) }}">pièce</a></strong></p>
+    <p class="profile">carte vitale : <strong><a class="btn btn-blue" href="{{ asset('files2/'~user.identity.pdfName2) }}">carte</a></strong></p>
+    <p class="profile">Dérnier bulletin de salaire : <strong><a class="btn btn-blue" href="{{ asset('files3/'~user.identity.pdfName3) }}">carte</a></strong></p>
 
 
     <div class="row space10"></div>

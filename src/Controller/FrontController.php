@@ -70,57 +70,6 @@ class FrontController extends Controller {
 
     }
 
-    /**
-     * @Route("/mes-infos")
-     * @param Request $request
-     * @return Response
-     */
-
-    public function  info(Request $request): Response {
-
-
-        $info = new ComplementInfo();
-
-        $addInfo = $this->createForm(ComplementInfoType::class);
-
-        $addInfo->handleRequest($request);
-
-        if($addInfo->isSubmitted() && $addInfo->isValid()) {
-
-            $info = $addInfo->getData();
-
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($info);
-
-            $manager->flush();
-
-        }
-
-
-        return $this->render('complement_info.html.twig', [
-            'title' => 'Envoyer mes informations et joindre mes fichier',
-            'description' => 'Envoyer mes informations et joindre mes fichier',
-            'keywords' => 'Envoyer mes informations et joindre mes fichier',
-            'addInfo' => $addInfo->createView()
-        ]);
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

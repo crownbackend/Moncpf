@@ -72,13 +72,6 @@
 
 <div class="row space25"></div>
 
-    {{ form_label(form.identity.opca, 'Code OPCA') }}
-<a href="http://www.dif69.com/trouver-son-opca.html" target="_blank" class="bouton">Cliquer ici pour trouver votre code naf</a></br>
-    {{ form_widget(form.identity.opca) }}
-    {{ form_errors(form.identity.opca) }}
-
-<div class="row space25"></div>
-
 
     {{ form_label(form.identity.professionalCategory, 'Categorie professionnel') }}
     {{ form_widget(form.identity.professionalCategory) }}
@@ -101,6 +94,22 @@
     {{ form_label(form.identity.cpfTime, 'Vos heure CPF') }}
     {{ form_widget(form.identity.cpfTime) }}
     {{ form_errors(form.identity.cpfTime) }}
+<div class="row space25"></div>
+
+
+    {{ form_label(form.identity.pdfFile, 'Votre pièce d\'iendtité') }}
+    {{ form_widget(form.identity.pdfFile) }}
+    {{ form_errors(form.identity.pdfFile) }}
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.pdfFile2, 'Votre carte vital') }}
+    {{ form_widget(form.identity.pdfFile2) }}
+    {{ form_errors(form.identity.pdfFile2) }}
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.pdfFile3, 'dernier bulletin') }}
+    {{ form_widget(form.identity.pdfFile3) }}
+    {{ form_errors(form.identity.pdfFile3) }}
 <div class="row space25"></div>
 
     <div>

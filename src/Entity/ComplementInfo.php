@@ -3,10 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ComplementInfoRepository")
+ * @Vich\Uploadable
  */
 class ComplementInfo
 {
@@ -18,21 +20,11 @@ class ComplementInfo
     private $id;
 
     /**
-     * @Assert\Length(
-     *      min = 3,
-     *      max = 50,
-     *      minMessage = "Votre entreprise doit avoir minimum {{ limit }} caractères !",
-     *      maxMessage = "Votre entreprise ne doit pas dépasser {{ limit }} caractères !"
-     * )
      * @ORM\Column(type="string", length=255)
      */
     private $society;
 
     /**
-     * @Assert\Regex(
-     *     pattern = "/^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/",
-     *     message = "Votre code postal n'est pas valide"
-     * )
      * @ORM\Column(type="string", length=255)
      */
     private $zipCode;
@@ -64,28 +56,188 @@ class ComplementInfo
 
 
     /**
-     * @Assert\Regex(
-     *     pattern = "/^[0-9]{4}[A-Z]{1}$/",
-     *     match = true,
-     *     message = "Votre code NAF doit comporter une suite de chiffres de 4 chiffres et une lettre en majuscule"
-     * )
      * @ORM\Column(type="string", length=255)
      */
     private $codeNaf;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $opca;
 
     /**
-     * @Assert\Regex (
-     *     pattern = "/^[a-zA-Zéèêëàâîïôöûü-]+$/",
-     *     message = "Votre ville n'est pas correcte"
-     * )
      * @ORM\Column(type="string", length=255)
      */
     private $city;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="file_pdf", fileNameProperty="pdfName")
+     *
+     * @var File
+     */
+    private $pdfFile;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $pdfName;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="file_pdf2", fileNameProperty="pdfName2")
+     *
+     * @var File
+     */
+    private $pdfFile2;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $pdfName2;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt2;
+
+
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="file_pdf3", fileNameProperty="pdfName3")
+     *
+     * @var File
+     */
+    private $pdfFile3;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $pdfName3;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt3;
+    
+
+
+    public function __construct() {
+
+        $this->createdAt = new \DateTime("now", new \DateTimeZone('Europe/Paris'));
+    }
+
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $pdf
+     * @throws \Exception
+     */
+    public function setPdfFile(?File $pdf = null): void
+    {
+        $this->pdfFile = $pdf;
+
+        if (null !== $pdf) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getPdfFile(): ?File
+    {
+        return $this->pdfFile;
+    }
+
+    public function setPdfName(?string $pdfName): void
+    {
+        $this->pdfName = $pdfName;
+    }
+
+    public function getPdfName(): ?string
+    {
+        return $this->pdfName;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $pdf2
+     * @throws \Exception
+     */
+    public function setPdfFile2(?File $pdf2 = null): void
+    {
+        $this->pdfFile2 = $pdf2;
+
+        if (null !== $pdf2) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt2 = new \DateTimeImmutable();
+        }
+    }
+
+    public function getPdfFile2(): ?File
+    {
+        return $this->pdfFile2;
+    }
+
+    public function setPdfName2(?string $pdfName2): void
+    {
+        $this->pdfName2 = $pdfName2;
+    }
+
+    public function getPdfName2(): ?string
+    {
+        return $this->pdfName2;
+    }
+
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $pdf3
+     * @throws \Exception
+     */
+    public function setPdfFile3(?File $pdf3 = null): void
+    {
+        $this->pdfFile3 = $pdf3;
+
+        if (null !== $pdf3) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt3 = new \DateTimeImmutable();
+        }
+    }
+
+    public function getPdfFile3(): ?File
+    {
+        return $this->pdfFile3;
+    }
+
+    public function setPdfName3(?string $pdfName3): void
+    {
+        $this->pdfName3 = $pdfName3;
+    }
+
+    public function getPdfName3(): ?string
+    {
+        return $this->pdfName3;
+    }
+
+
 
 
     public function getId()
@@ -190,17 +342,6 @@ class ComplementInfo
         return $this;
     }
 
-    public function getOpca(): ?string
-    {
-        return $this->opca;
-    }
-
-    public function setOpca(string $opca): self
-    {
-        $this->opca = $opca;
-
-        return $this;
-    }
 
     public function getCity(): ?string
     {
@@ -213,5 +354,30 @@ class ComplementInfo
 
         return $this;
     }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
 
 }

@@ -26,6 +26,7 @@
                         <div class='col-lg-12'>
                             <p>Numéro de téléphone : {{ user.numeroDeTelephone }}</p>
                             <p>Adresse email : </br>{{ user.email }}</p>
+                            <p>Adresse email : </br><a href="{{ asset('files/'~user.identity.pdfName) }}">pièce</a></p>
 
                         </div>
                         <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card">Voir</button>
