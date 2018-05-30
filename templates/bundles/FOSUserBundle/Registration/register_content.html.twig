@@ -72,6 +72,10 @@
 
 <div class="row space25"></div>
 
+    {{ form_label(form.identity.cpfTime, 'Vos heure CPF') }}
+    {{ form_widget(form.identity.cpfTime) }}
+    {{ form_errors(form.identity.cpfTime) }}
+<div class="row space25"></div>
 
     {{ form_label(form.identity.professionalCategory, 'Categorie professionnel') }}
     {{ form_widget(form.identity.professionalCategory) }}
@@ -91,10 +95,6 @@
 
 <div class="row space25"></div>
 
-    {{ form_label(form.identity.cpfTime, 'Vos heure CPF') }}
-    {{ form_widget(form.identity.cpfTime) }}
-    {{ form_errors(form.identity.cpfTime) }}
-<div class="row space25"></div>
 
 
     {{ form_label(form.identity.pdfFile, 'Votre pièce d\'iendtité') }}
@@ -110,6 +110,11 @@
     {{ form_label(form.identity.pdfFile3, 'dernier bulletin') }}
     {{ form_widget(form.identity.pdfFile3) }}
     {{ form_errors(form.identity.pdfFile3) }}
+<div class="row space25"></div>
+
+    {{ form_label(form.identity.pdfFile4, 'Attestation dif (si vous n\'avez pas l\'attestation diff, envoyer votre bulletin de salaire de janvier 2015 ou décembre 2014)' ) }}
+    {{ form_widget(form.identity.pdfFile4) }}
+    {{ form_errors(form.identity.pdfFile4) }}
 <div class="row space25"></div>
 
     <div>

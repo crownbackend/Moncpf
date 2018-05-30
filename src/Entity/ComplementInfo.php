@@ -137,6 +137,29 @@ class ComplementInfo
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt3;
+
+
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="file_pdf4", fileNameProperty="pdfName4")
+     *
+     * @var File
+     */
+    private $pdfFile4;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $pdfName4;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt4;
     
 
 
@@ -235,6 +258,37 @@ class ComplementInfo
     public function getPdfName3(): ?string
     {
         return $this->pdfName3;
+    }
+
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $pdf4
+     * @throws \Exception
+     */
+    public function setPdfFile4(?File $pdf4 = null): void
+    {
+        $this->pdfFile4 = $pdf4;
+
+        if (null !== $pdf4) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt4 = new \DateTimeImmutable();
+        }
+    }
+
+    public function getPdfFile4(): ?File
+    {
+        return $this->pdfFile4;
+    }
+
+    public function setPdfName4(?string $pdfName4): void
+    {
+        $this->pdfName4 = $pdfName4;
+    }
+
+    public function getPdfName4(): ?string
+    {
+        return $this->pdfName4;
     }
 
 

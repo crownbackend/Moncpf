@@ -99,36 +99,11 @@ class ComplementInfoType extends AbstractType
                     ]
                 ]
             ])
-            ->add('cpfTime', ChoiceType::class, [
+            ->add('cpfTime', NumberType::class, [
                 'attr' => [
                     'class' => 'form-info-select'
                 ],
-                'choices' => [
-                    '1' => '1',
-                    '2' => '2',
-                    '3' => '3',
-                    '4' => '4',
-                    '5' => '5',
-                    '6' => '6',
-                    '7' => '7',
-                    '8' => '8',
-                    '9' => '9',
-                    '10' => '10',
-                    '11' => '11',
-                    '12' => '12',
-                    '13' => '1',
-                    '14' => '14',
-                    '15' => '15',
-                    '16' => '16',
-                    '17' => '17',
-                    '18' => '18',
-                    '19' => '19',
-                    '20' => '20',
-                    '21' => '21',
-                    '22' => '22',
-                    '23' => '23',
-                    '24' => '24',
-                ]
+
             ])
             ->add('codeNaf', null, [
                 'attr' => [
@@ -143,6 +118,7 @@ class ComplementInfoType extends AbstractType
             ->add('pdfFile', FileType::class)
             ->add('pdfFile2', FileType::class)
             ->add('pdfFile3', FileType::class)
+            ->add('pdfFile4', FileType::class)
         ;
     }
 
