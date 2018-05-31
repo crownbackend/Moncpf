@@ -1,9 +1,17 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
+{% set title = 'Récupérer votre mot de passe' %}
+{% set description = 'Changer votre mot de passe si vous l\'avez oublier' %}
+{% set keywords = 'Mot, de, passe, oublier, changer' %}
+
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-<p>
-{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
-</p>
+    <div class="row space50">
+        </div><div class="row space50"></div>
+            <p class="profile">
+            {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+            </p>
+        <div class="row space50"></div>
+    <div class="row space50"></div>
 {% endblock %}

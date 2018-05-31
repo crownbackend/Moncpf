@@ -10,6 +10,8 @@
 
     <div class="container" id="tourpackages-carousel">
         <div class="row">
+
+
     {% for user in users %}
 
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -26,19 +28,18 @@
                         <div class='col-lg-12'>
                             <p>Numéro de téléphone : {{ user.numeroDeTelephone }}</p>
                             <p>Adresse email : </br>{{ user.email }}</p>
-                            <p>Adresse email : </br><a href="{{ asset('files/'~user.identity.pdfName) }}">pièce</a></p>
 
                         </div>
                         <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card">Voir</button>
-                        <button type="button" class="btn btn-success btn-xs btn-update btn-add-card">Editer</button>
-                        <button type="button" class="btn btn-danger btn-xs btn-update btn-add-card">Supprimer</button>
                         <span class='glyphicon glyphicon-exclamation-sign text-danger pull-right icon-style'></span>
                     </div>
                 </div>
             </div>
 
 
-{% endfor %}
+    {% endfor %}
+
+
         </div><!-- End row -->
     </div><!-- End container -->
 {% endblock %}

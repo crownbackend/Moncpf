@@ -1,5 +1,5 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
+<div class="row space50"></div>
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
@@ -19,9 +19,14 @@
 
     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+    <div class="row space25"></div>
+
     <a href="{{ path('fos_user_resetting_request') }}" class="btn btn-blue">
         Mot de passe oublier
     </a>
-    <div class="row space10"></div>
+    <div class="row space25"></div>
+
     <input type="submit" class="btn btn-blue" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 </form>
+<div class="row space50"></div>

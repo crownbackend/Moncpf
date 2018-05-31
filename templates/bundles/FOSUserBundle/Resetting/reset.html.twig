@@ -1,5 +1,9 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
+{% set title = 'Récupérer votre mot de passe' %}
+{% set description = 'Changer votre mot de passe si vous l\'avez oublier' %}
+{% set keywords = 'Mot, de, passe, oublier, changer' %}
+
 {% block fos_user_content %}
 {% include "@FOSUser/Resetting/reset_content.html.twig" %}
 {% endblock fos_user_content %}

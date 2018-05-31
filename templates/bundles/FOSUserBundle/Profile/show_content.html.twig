@@ -19,10 +19,10 @@
     <p class="profile">Type de contrat : <strong>{{ user.identity.typeOfContract }}</strong></p>
     <p class="profile">Formation choisie : <strong>{{ user.identity.selectedTraining }}</strong></p>
     <p class="profile">Mes heures CPF : <strong>{{ user.identity.cpfTime }} Heures</strong></p>
-    <p class="profile">pièce d'identité : <strong><a class="btn btn-blue" href="{{ asset('files/'~user.identity.pdfName) }}">pièce</a></strong></p>
-    <p class="profile">carte vitale : <strong><a class="btn btn-blue" href="{{ asset('files2/'~user.identity.pdfName2) }}">carte</a></strong></p>
-    <p class="profile">Dérnier bulletin de salaire : <strong><a class="btn btn-blue" href="{{ asset('files3/'~user.identity.pdfName3) }}">carte</a></strong></p>
-    <p class="profile">Dérnier diff: <strong><a class="btn btn-blue" href="{{ asset('files4/'~user.identity.pdfName4) }}">carte</a></strong></p>
+    <p class="profile">pièce d'identité : <strong><a class="btn btn-blue" target="_blank" href="{{ asset('files/'~user.identity.pdfName) }}">pièce d'identité</a></strong></p>
+    <p class="profile">carte vitale : <strong><a class="btn btn-blue" target="_blank" href="{{ asset('files2/'~user.identity.pdfName2) }}">carte vitale</a></strong></p>
+    <p class="profile">Dérnier bulletin de salaire : <strong><a class="btn btn-blue" target="_blank" href="{{ asset('files3/'~user.identity.pdfName3) }}">Dérnier bulletin de salaire</a></strong></p>
+    <p class="profile">Attestation dif: <strong><a class="btn btn-blue" target="_blank" href="{{ asset('files4/'~user.identity.pdfName4) }}">Attestation dif</a></strong></p>
 
 
     <div class="row space10"></div>

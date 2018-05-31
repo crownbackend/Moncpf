@@ -9,9 +9,10 @@
 
 <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
     <div>
-        <label for="username">{{ 'resetting.request.username'|trans }}</label>
+        <label for="username">Adresse Email</label>
         <input type="text" id="username" name="username" required="required" />
     </div>
+    <div class="row space10"></div>
     <div>
         <input type="submit" class="btn btn-blue" value="{{ 'resetting.request.submit'|trans }}" />
     </div>
