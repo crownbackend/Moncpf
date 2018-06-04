@@ -32,7 +32,4 @@ class RedirecteController extends Controller {
 
 
 
-
-
-
 }

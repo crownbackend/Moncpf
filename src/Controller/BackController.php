@@ -18,15 +18,25 @@ class BackController extends Controller {
      * @return Response
      */
 
-    public function index(): Response {
+    public function index(Request $request): Response {
 
-        $userManager = $this->get('fos_user.user_manager');
-        $users = $userManager->findUsers();
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT user FROM App:user user ORDER BY user.id";
+        $query = $em->createQuery($dql);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            9/*limit per page*/
+        );
+
+
 
         return $this->render('backOffice/index_admin.html.twig', [
             'title' => 'Espace Administrations',
             'description' => 'Bienvenue dans votre espace Administration',
-            'users' => $users
+            'pagination' => $pagination
         ]);
     }
 
@@ -47,7 +57,8 @@ class BackController extends Controller {
 
         return $this->render('backOffice/detail.html.twig', [
             'title' => '',
-            'description' => ''
+            'description' => '',
+            'user' => $user
         ]);
 
     }

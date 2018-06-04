@@ -244,9 +244,7 @@ class ComplementInfoType extends AbstractType
             ])
             ->add('pdfFile', FileType::class, [
                 'constraints' => [new Assert\File([
-                    'maxSize' => '2M',
-                    'mimeTypes' => '{"application/pdf", "application/x-pdf"}',
-                    'mimeTypesMessage' => 'Il faut un fichier PDF, XPDF, PNG, JPEG'
+                    'maxSize' => '3M'
                 ])],
                 'attr' => [
                     'class' => 'btn btn-blue'
@@ -254,9 +252,7 @@ class ComplementInfoType extends AbstractType
             ])
             ->add('pdfFile2', FileType::class, [
                 'constraints' => [new Assert\File([
-                    'maxSize' => '2M',
-                    'mimeTypes' => '{"application/pdf", "application/x-pdf"}',
-                    'mimeTypesMessage' => 'Il faut un fichier PDF, XPDF, PNG, JPEG'
+                    'maxSize' => '3M'
                 ])],
                 'attr' => [
                     'class' => 'btn btn-blue'
@@ -264,9 +260,7 @@ class ComplementInfoType extends AbstractType
             ])
             ->add('pdfFile3', FileType::class, [
                 'constraints' => [new Assert\File([
-                    'maxSize' => '2M',
-                    'mimeTypes' => '{"application/pdf", "application/x-pdf"}',
-                    'mimeTypesMessage' => 'Il faut un fichier PDF, XPDF, PNG, JPEG'
+                    'maxSize' => '3M'
                 ])],
                 'attr' => [
                     'class' => 'btn btn-blue'
@@ -274,9 +268,7 @@ class ComplementInfoType extends AbstractType
             ])
             ->add('pdfFile4', FileType::class, [
                 'constraints' => [new Assert\File([
-                    'maxSize' => '2M',
-                    'mimeTypes' => '{"application/pdf", "application/x-pdf"}',
-                    'mimeTypesMessage' => 'Il faut un fichier PDF, XPDF, PNG, JPEG'
+                    'maxSize' => '3M'
                 ])],
                 'attr' => [
                     'class' => 'btn btn-blue'

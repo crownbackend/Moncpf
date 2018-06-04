@@ -7,8 +7,41 @@
 
     <h1 class="text-center">Information de l'utilisateur</h1>
 
-        iuhzeihuezihuzehi
 
+    <div class="espace60"></div>
 
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="thumbnail">
+            <div class="caption">
+                <div class='col-lg-12'>
+                    <span class="glyphicon glyphicon-credit-card"></span>
+                    <span class="glyphicon glyphicon-trash pull-right text-primary"></span>
+                </div>
+                <div class='col-lg-12 well well-add-card text-center'>
+                    <h4 class="identity">Nom : {{ user.nom }}</h4>
+                    <h4 class="identity">Prénom : {{ user.prenom }}</h4>
+                </div>
+                <div class='col-lg-12 text-center'>
+                    <p class="profile">Numéro de téléphone : <strong>{{ user.numeroDeTelephone }}</strong></p>
+                    <p class="profile">Adresse email : <strong>{{ user.email }}</strong></p>
+                    <p class="profile">sociète : <strong>{{ user.identity.society }}</strong></p>
+                    <p class="profile">Ville : <strong>{{ user.identity.city }}</strong></p>
+                    <p class="profile">Code postale : <strong>{{ user.identity.zipCode }}</strong></p>
+                    <p class="profile">Numéro de siret : <strong>{{ user.identity.numberSiret }}</strong></p>
+                    <p class="profile">Code Naf : <strong>{{ user.identity.codeNaf }}</strong></p>
+                    <p class="profile">Catégorie professionnelle : <strong>{{ user.identity.professionalCategory }}</strong></p>
+                    <p class="profile">Type de contrat : <strong>{{ user.identity.typeOfContract }}</strong></p>
+                    <p class="profile">Formation choisie : <strong>{{ user.identity.selectedTraining }}</strong></p>
+                    <p class="profile">Mes heures CPF : <strong>{{ user.identity.cpfTime }} Heures</strong></p>
+                    <p class="profile">pièce d'identité : <strong><a class="btn btn-primary" target="_blank" href="{{ asset('files/'~user.identity.pdfName) }}">pièce d'identité</a></strong></p>
+                    <p class="profile">carte vitale : <strong><a class="btn btn-primary" target="_blank" href="{{ asset('files2/'~user.identity.pdfName2) }}">carte vitale</a></strong></p>
+                    <p class="profile">Dérnier bulletin de salaire : <strong><a class="btn btn-primary" target="_blank" href="{{ asset('files3/'~user.identity.pdfName3) }}">Dérnier bulletin de salaire</a></strong></p>
+                    <p class="profile">Attestation dif: <strong><a class="btn btn-primary" target="_blank" href="{{ asset('files4/'~user.identity.pdfName4) }}">Attestation dif</a></strong></p>
+
+                </div>
+                <span class='glyphicon glyphicon-exclamation-sign text-danger pull-right icon-style'></span>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

@@ -12,7 +12,7 @@
         <div class="row">
 
 
-    {% for user in users %}
+    {% for user in pagination %}
 
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="thumbnail">
@@ -30,7 +30,7 @@
                             <p>Adresse email : </br>{{ user.email }}</p>
 
                         </div>
-                        <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card">Voir</button>
+                        <a href="{{ path('app_back_detail', {id: user.id}) }}" class="btn btn-primary btn-xs btn-update btn-add-card">Voir</a>
                         <span class='glyphicon glyphicon-exclamation-sign text-danger pull-right icon-style'></span>
                     </div>
                 </div>
@@ -39,7 +39,10 @@
 
     {% endfor %}
 
-
         </div><!-- End row -->
     </div><!-- End container -->
+    <div class="espace40"></div>
+    <div class="navigation col-sm-4">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 {% endblock %}

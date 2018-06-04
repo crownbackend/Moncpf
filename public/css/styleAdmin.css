@@ -95,3 +95,20 @@ p
 {
     margin-left:15px;
 }
+
+.espace60 {
+    padding: 60px;
+}
+
+.espace40 {
+    padding: 40px;
+}
+
+.profile {
+    font-size: 20px;
+    padding: 20px;
+    font-family: 'Oxygen', sans-serif;
+}
+.identity {
+    font-size: 40px;
+}
