@@ -15,6 +15,7 @@ class BackController extends Controller {
 
     /**
      * @Route("/admin")
+     * @param Request $request
      * @return Response
      */
 

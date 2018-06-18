@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if lt IE 7 ]><html class="ie ie6" lang="fr"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="fr"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="fr"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="not-ie" lang="fr"> <!--<![endif]-->
 <head>
     <!-- Basic Meta Tags -->
@@ -19,9 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <![endif]-->
-
     <!-- Favicon -->
-
     <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('img/favico/android-icon-192x192.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favico/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/favico/favicon-96x96.png') }}">
@@ -30,7 +27,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
     <link href="https://fonts.googleapis.com/css?family=Oswald|Oxygen|Roboto|Source+Sans+Pro" rel="stylesheet">
 
    {% block style %}
@@ -59,36 +55,22 @@
 </div>
 
 {% block body %}
-
 {% endblock %}
-
 
 <!-- Footer -->
 <footer id="footer">
     <div class="container">
         <div class="row">
 
-
-            <!-- form span -->
-            <div class="span5">
-               {{
-                   render(controller(
-                       'App\\Controller\\FrontController::contact'
-                   ))
-               }}
-            </div>
-
-
-
-
-            <div class="span3 offset3">
-                <h3>Ou nous trouver ? </h3>
-                25 Rue Benoît Frachon<br>
-                93000 Bobigny<br>
-                France<br>
+            <div class="">
+                <h3>Où nous trouver ? </h3>
+                Centre de formation TS Bobigny
+Sécurité Routière & Centre d'Examen BULATS<br>
+                Nos locaux sont ouverts du lundi au samedi de 8h00 à 16h00 non-stop 
+25/27 rue Benoît Frachon 93000 BOBIGNY<br>
+              
                 <br>
                 <i class="icon-phone"></i>01 82 02 89 15<br>
-                <i class="icon-phone"></i>06 63 37 91 95<br>
                 <i class="icon-envelope"></i><a href="mailto:contact@moncpf.info">contact@moncpf.info</a><br>
                 <i class="icon-home"></i><a href="{{ path('app_front_index') }}">www.moncpf.info</a>
             </div>

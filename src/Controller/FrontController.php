@@ -71,56 +71,6 @@ class FrontController extends Controller {
 
     }
 
-    /**
-     * @Route("/contact")
-     * @param Request $request
-     * @return Response
-     */
-    public function contact(Request $request, \Swift_Mailer $mailer): Response {
-
-        $form = $this->createForm(ContactType::class);
-        $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()) {
-            $contact = $form->getData();
-            $message = (new \Swift_Message($contact['subject']))
-                ->setFrom($contact['email'])
-                ->setTo('crowbackend@gmail.com')
-                ->setBody(
-                    $contact['message'],
-                    'text/plain'
-                );
-            $mailer->send($message);
-
-            $this->addFlash('notice', 'Le méssage a bien étais envoyer vous allez recevoir une réponse d\'ici 48h' );
-
-            return $this->redirectToRoute('app_front_index');
-        }
-
-        return $this->render('contact.html.twig', [
-            'title' => 'Contacter Nous',
-            'description' => 'Contacter nous a tout moment si vous avez des questions',
-            'keywords' => 'Contact, monCpf, info',
-            'formContact' => $form->createView()
-        ]);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
